@@ -1,0 +1,12 @@
+use Robo_Resume;
+
+Drop table if exists RResume;
+
+create table RResume(
+resumeId int primary key not null auto_increment,
+name varchar(30),
+email varchar(30),
+education varchar (200),
+experince varchar (200),
+skill varchar(100)
+);
