@@ -43,7 +43,7 @@ public class RoboApp {
 				 {
 				 
 					
-					sql= "Select * from RResume where Name='"+name+"' , Email='"+email+"', education='"+education+"', experince='"+experiance+"',, skill='"+skill+"'";
+					sql= "Select * from RResume";
 					stmt=con.createStatement();
 					rs=stmt.executeQuery(sql);
 					

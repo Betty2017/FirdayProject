@@ -8,7 +8,8 @@ public  class Education {
 	private String school;
 	private int year;
 	private String final_edu ;
-	
+	int x=1;
+	String temp;
 		
 	public String getSchool() {
 		return school;
@@ -47,34 +48,56 @@ public  class Education {
 	
 	public  void eduDisplay()
 	{
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Number of  Education Achivement :");
-	      int numOfAchivement = sc.nextInt();
-	      	      
-	  	 while(numOfAchivement < 1 || numOfAchivement>10) 
-	       {
-	     	  System.out.println("Please Enter Number of  Education Achivement Again:");  
-	     	  numOfAchivement = sc.nextInt();
-	       }//while end 
-	       	  
-	  	 
-	     
-	  		String edu[] = new String[numOfAchivement];
-
-	  		 for (int i = 0; i < edu.length; i++)
-	  		{
-	  			 System.out.println("Enter Education Achivement ");
-	  			 
-	  		  edu[i] = sc.next();
-	  		 // sc.nextLine();
-	  		  final_edu = final_edu+" "+ edu[i];
-	  		  
-	  		}
-	  		 
-	  		setFinal_edu(final_edu);	 
-	}
 		
-	  	 
+	do{
+		try{
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Please Enter Number of  Education Achivement :");
+			      int numOfAchivement = sc.nextInt();
+			      	      
+			  	 while(numOfAchivement < 1 || numOfAchivement>10) 
+			       {
+			     	  System.out.println("Please Enter Number of  Education Achivement Again:");  
+			     	  numOfAchivement = sc.nextInt();
+			       }//while end 
+			       		  	 
+			     
+			  		String edu[] = new String[numOfAchivement];
+		
+			  		 for (int i = 0; i < edu.length; i++)
+			  		{
+			  			 System.out.println("Please Enter Education Achivement ");
+			  			
+			  			
+			  		edu[i] = sc.next();
+			  		edu[i] += sc.nextLine();
+			  		 
+			  		  
+			  		if (i==0){
+			 			 temp= edu[i];
+			 			 final_edu =temp;
+			 		   }
+			 		  
+			 		   else {
+			 		     
+			 		  final_edu = final_edu +" , "+  edu[i];
+			 		   }
+			  		}
+			  		 
+			  		setFinal_edu(final_edu);	 
+			x=2;
+			}
+				catch(Exception e)
+				{
+					System.out.println("You Enterd Incorrect Value:");
+				}
+			}
+		while(x==1);
+	}
+	
+	
+	
+	
 	} 
 
 	  	 
